@@ -21,10 +21,7 @@ const render = (component) => {
 				let events = {};
 	
 				for (const attr of $dummyNode.attributes) {
-					if (attr.name.includes("on:")) {
-						events[(attr.name.substring(1).split(":")[1])] = attr.value;
-					}
-					else if (attr.name.startsWith(":")) {
+					if (attr.name.startsWith(":")) {
 						if (attr.value) compCopy.props[attr.name.substring(1)] = attr.value;
 						else compCopy.props[attr.name.substring(1)] = true;
 					}

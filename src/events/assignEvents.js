@@ -10,8 +10,8 @@ const assignEvents = (component, $node, recursive) => {
 	let events = {};
 
 	for (const attr of $node.attributes) {
-		if (attr.name.includes("on:")) {
-			events[(attr.name.substring(1).split(":")[1])] = attr.value;
+		if (attr.name.startsWith("@")) {
+			events[attr.name.substring(1)] = attr.value;
 		}
 	}
 

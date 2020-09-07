@@ -8,7 +8,7 @@ let props = useStore({
 });
 
 const template = (props = {}) => /*html*/`
-	<h1 id="test" :on:click="clicked">${props.title}</h1>
+	<h1 id="test" @click="clicked">${props.title}</h1>
 `;
 
 export default {
@@ -17,6 +17,7 @@ export default {
 	props,
 	methods: {
 		clicked() {
+			console.log("clicked on title")
 			emit("#test", "test");
 		}
 	}

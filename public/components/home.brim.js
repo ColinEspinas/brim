@@ -60,7 +60,7 @@ const template = (props = {}) => /*html*/`
 			}
 		</style>
 		<test :title=${data.title}></test>
-		<button :on:click="countUp"><span>Count : ${props.count}</span></button>
+		<button @click="countUp"><span>Count : ${props.count}</span></button>
 	</div>
 `;
 
